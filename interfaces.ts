@@ -104,11 +104,11 @@ interface Engineer extends Human, Employee {
   languages: string[];
 }
 
-const pierre: Engineer = {
-  name: "Pierre",
-  id: 123897,
-  email: "pierre@gmail.com",
-  level: "senior",
-  languages: ["JS", "Python"],
-};
+// const pierre: Engineer = {
+//   name: "Pierre",
+//   id: 123897,
+//   email: "pierre@gmail.com",
+//   level: "senior",
+//   languages: ["JS", "Python"],
+// };
 
