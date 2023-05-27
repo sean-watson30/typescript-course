@@ -35,26 +35,26 @@ function someDemo(x: string | number, y: string | boolean) {
 
 // IN Operator Narrowing
 
-interface Movie {
-  title: string,
-  duration: number
-}
+// interface Movie {
+//   title: string,
+//   duration: number
+// }
 
-interface TVTShow {
-  title: string,
-  numEpisodes: number,
-  episodeDuration: number
-}
+// interface TVTShow {
+//   title: string,
+//   numEpisodes: number,
+//   episodeDuration: number
+// }
 
-function getRuntime(media: Movie | TVTShow) {
-  if ("numEpisodes" in media) {
-    return media.numEpisodes * media.episodeDuration
-  }
-  return media.duration
-}
+// function getRuntime(media: Movie | TVTShow) {
+//   if ("numEpisodes" in media) {
+//     return media.numEpisodes * media.episodeDuration
+//   }
+//   return media.duration
+// }
 
-console.log(getRuntime({ title: 'Harry Potter', duration: 140 }))
-console.log(getRuntime({ title: 'SpongeBob', numEpisodes: 80, episodeDuration: 30 }))
+// console.log(getRuntime({ title: 'Harry Potter', duration: 140 }))
+// console.log(getRuntime({ title: 'SpongeBob', numEpisodes: 80, episodeDuration: 30 }))
 
 
 
@@ -118,7 +118,7 @@ interface Rooster {
   name: string;
   weight: number;
   age: number;
-  kind: "rooster";
+  kind: "rooster"; // this key is the discriminator type, and each of these interfaces in the union must have this field in common
 }
 
 interface Cow {
@@ -142,11 +142,13 @@ interface Sheep {
   kind: "sheep";
 }
 
-type FarmAnimal = Pig | Rooster | Cow | Sheep;
+type FarmAnimal = Pig | Rooster | Cow | Sheep; // union type
 
 function getFarmAnimalSound(animal: FarmAnimal) {
+  animal;
   switch (animal.kind) {
     case "pig":
+      animal;
       return "Oink!";
     case "cow":
       return "Moooo!";
@@ -171,3 +173,4 @@ const stevie: Rooster = {
 };
 
 console.log(getFarmAnimalSound(stevie));
+
