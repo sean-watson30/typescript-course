@@ -51,3 +51,4 @@ console.log(getProfit(cats))
 console.log(getProfit(dune))
 // For example...
 // getProfit(cats) => -21166652
+
